@@ -2,25 +2,80 @@
 $mobile: 414px;
 $tablet: 1024px;
 $desktop: 1280px;
+:root {
+--background-gradient: rgba(0, 0, 0, 0.65);
+--color-white:#fff;
+--color-servicetext: #BABABA;
+}
+
+@mixin centeringFlexbox($disp: flex, $al-items: center, $just-cont: center){
+    display: $disp;
+    align-items: $al-items;
+    justify-content: $just-cont;
+}
 
 .servise-section{
-    padding: 24px 0 40px;
 
-    // @include centeringFlexbox();
-@media screen and (min-width: $mobile) {
-    padding: 24px 0 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
+    @media screen and (max-width:$tablet) {
+        max-width: $mobile;
+    }
 
-&__head{
-    color: var(--color-white);
-}
+    &__container{
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
 
-&__business-type{
-    color: var(--color-white);
-}
+        @media screen and (max-width:$tablet) {
+            height: 735px;
+            padding: 24px 0 40px;
+
+            @include centeringFlexbox();
+            flex-direction: column;
+            justify-content: space-between;
+
+
+            background-image: linear-gradient(to right, var(--background-gradient), var(--background-gradient)), url(../images/servise-bg-mobile.jpg);
+            @media (min-device-pixel-ratio: 2),
+                    (min-resolution: 192dpi),
+                    (min-resolution: 2dppx) {
+                    background-image: linear-gradient(to right, var(--background-gradient), var(--background-gradient)), url(../images/servise-bg-mobile@2x.jpg);
+            }
+        }    
+    }
+
+    &__features-container{
+        @media screen and (max-width:$tablet) {
+            margin-left: 140px;
+        }
+    }
+
+    &__head{
+        color: var(--color-white);
+    }
+
+    &__business-type{
+        color: var(--color-white);
+    }
+
+    &__text{
+        display: block;
+        color: var(--color-servicetext);
+
+        @media screen and (max-width:$tablet) {
+            max-width: 259px;
+        }
+    }
+
+    &__pictures-container{
+        display: flex;
+        gap: 20px;
+        justify-content: flex-end;
+    }
+
+    &__buttons-container{
+        @include centeringFlexbox();
+        flex-direction: column;
+        gap: 16px;
+    }
 
 }
