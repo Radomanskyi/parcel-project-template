@@ -1,6 +1,26 @@
+// Точки перелому
+$mobile: 414px;
+$tablet: 1024px;
+$desktop: 1280px;
+
 .servise-section{
     padding: 24px 0 40px;
+
+    // @include centeringFlexbox();
+@media screen and (min-width: $mobile) {
+    padding: 24px 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 &__head{
     color: var(--color-white);
 }
+
+&__business-type{
+    color: var(--color-white);
+}
+
 }
