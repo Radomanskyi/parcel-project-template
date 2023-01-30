@@ -15,7 +15,7 @@ $desktop: 1280px;
 }
 
 .servise-section{
-
+    // margin: 0;
     @media screen and (max-width:$tablet) {
         max-width: $mobile;
     }
@@ -50,6 +50,8 @@ $desktop: 1280px;
     }
 
     &__head{
+        display: block;
+        margin: 0;
         color: var(--color-white);
     }
 
@@ -67,9 +69,25 @@ $desktop: 1280px;
     }
 
     &__pictures-container{
+        position: relative;
+        @media screen and (max-width:$tablet) {
+            width: $mobile;      
+        }
         display: flex;
         gap: 20px;
         justify-content: flex-end;
+    }
+    &__arrows-container{
+        position: absolute;
+        left:40px;
+        bottom: -46px;
+        @include centeringFlexbox();
+        gap: 32px;
+    }
+    &__arrow{
+        margin: 0;
+        padding: 0;
+        fill: var(--color-white);
     }
 
     &__buttons-container{
