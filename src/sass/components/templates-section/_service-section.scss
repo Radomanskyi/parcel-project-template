@@ -17,7 +17,7 @@
 }
 
 .servise-section{
-    // margin: 0;
+
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -25,7 +25,6 @@
     @media screen and (max-width:$tablet) {
         max-width: $mobile;
         height: 735px;
-
 
         background-image: linear-gradient(to right, var(--background-gradient), var(--background-gradient)), url(../images/background/background-restaurant.jpg);
         @media (min-device-pixel-ratio: 2),
@@ -39,13 +38,12 @@
         @media screen and (max-width:$tablet) {
             height: 735px;
             padding: 24px 0 40px;
-            
+
             @include centeringFlexbox();
             flex-direction: column;
             justify-content: space-between;
         }
     }
-
 
     &__features-container{
         @media screen and (max-width:$tablet) {
@@ -56,15 +54,37 @@
     &__head{
         display: block;
         margin: 0;
+
+        font-family: 'Film P3';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 1.075;
+        letter-spacing: 0.3em;
         color: var(--color-white);
     }
 
     &__business-type{
+        @media screen and (max-width:$tablet) {
+            margin: 12px 0 20px;
+        }
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 1.2;
+        letter-spacing: 0.02em;
         color: var(--color-white);
     }
 
     &__text{
         display: block;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 1.25;
+        letter-spacing: 0.02em;
         color: var(--color-servicetext);
 
         @media screen and (max-width:$tablet) {
@@ -109,5 +129,11 @@
         background-color: var(--background-button);
 
         color: var(--color-button-text);
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.25;
+        letter-spacing: 0.02em;
     }
 }
